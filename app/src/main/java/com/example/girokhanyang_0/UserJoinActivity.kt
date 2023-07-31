@@ -1,7 +1,7 @@
 package com.example.girokhanyang_0
 
+import android.app.Activity
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
@@ -15,7 +15,7 @@ import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.ktx.Firebase
 
-class UserJoinActivity : AppCompatActivity() {
+class UserJoinActivity : Activity() {
     private lateinit var mFirebaseAuth : FirebaseAuth      // 파이어 베이스 인증
     private lateinit var mDatabaseRef : DatabaseReference   // 실시간 데이터 베이스
     private lateinit var mEtEmail : EditText
@@ -72,7 +72,6 @@ class UserJoinActivity : AppCompatActivity() {
                         val firebaseUser: FirebaseUser? = mFirebaseAuth.currentUser
                         val account = UserAccount()
                         firebaseUser?.let {
-                            account.setIdToken(it.uid)
                             account.setEmailId(it.email)
                             account.setPassword(strPassword)
                             account.setNickname(strNickname)

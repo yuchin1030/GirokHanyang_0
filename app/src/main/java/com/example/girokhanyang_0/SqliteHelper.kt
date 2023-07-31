@@ -15,7 +15,7 @@ data class DiaryEntry(
 )
 
 class SqliteHelper(context: Context, name: String, version: Int) :
-    SQLiteOpenHelper(context, name, null, version) {
+    SQLiteOpenHelper(context, name, null, version), MutableList<DiaryEntry> {
 
     /*companion object {
         private const val DATABASE_NAME = "dDiary.db"
@@ -118,5 +118,88 @@ class SqliteHelper(context: Context, name: String, version: Int) :
         val db = this.writableDatabase
         db.execSQL("DELETE FROM diaryEntry where id = ${diaryEntry.id}")
         db.close()
+    }
+
+    override val size: Int
+        get() = TODO("Not yet implemented")
+
+    override fun clear() {
+        TODO("Not yet implemented")
+    }
+
+    override fun addAll(elements: Collection<DiaryEntry>): Boolean {
+        TODO("Not yet implemented")
+    }
+
+    override fun addAll(index: Int, elements: Collection<DiaryEntry>): Boolean {
+        TODO("Not yet implemented")
+    }
+
+    override fun add(index: Int, element: DiaryEntry) {
+        TODO("Not yet implemented")
+    }
+
+    override fun add(element: DiaryEntry): Boolean {
+        TODO("Not yet implemented")
+    }
+
+    override fun get(index: Int): DiaryEntry {
+        TODO("Not yet implemented")
+    }
+
+    override fun isEmpty(): Boolean {
+        TODO("Not yet implemented")
+    }
+
+    override fun iterator(): MutableIterator<DiaryEntry> {
+        TODO("Not yet implemented")
+    }
+
+    override fun listIterator(): MutableListIterator<DiaryEntry> {
+        TODO("Not yet implemented")
+    }
+
+    override fun listIterator(index: Int): MutableListIterator<DiaryEntry> {
+        TODO("Not yet implemented")
+    }
+
+    override fun removeAt(index: Int): DiaryEntry {
+        TODO("Not yet implemented")
+    }
+
+    override fun subList(fromIndex: Int, toIndex: Int): MutableList<DiaryEntry> {
+        TODO("Not yet implemented")
+    }
+
+    override fun set(index: Int, element: DiaryEntry): DiaryEntry {
+        TODO("Not yet implemented")
+    }
+
+    override fun retainAll(elements: Collection<DiaryEntry>): Boolean {
+        TODO("Not yet implemented")
+    }
+
+    override fun removeAll(elements: Collection<DiaryEntry>): Boolean {
+        TODO("Not yet implemented")
+    }
+
+    override fun remove(element: DiaryEntry): Boolean {
+        TODO("Not yet implemented")
+    }
+
+    override fun lastIndexOf(element: DiaryEntry): Int {
+        TODO("Not yet implemented")
+    }
+
+    override fun indexOf(element: DiaryEntry): Int {
+        TODO("Not yet implemented")
+    }
+
+    override fun containsAll(elements: Collection<DiaryEntry>): Boolean {
+        TODO("Not yet implemented")
+    }
+
+    override fun contains(element: DiaryEntry): Boolean {
+        TODO("Not yet implemented")
     }
 }
